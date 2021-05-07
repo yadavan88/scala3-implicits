@@ -1,10 +1,10 @@
 package com.yadavan88.scala2
 
 trait Printer {
-  def write(value:String): Unit
+  def write(value: String): Unit
 }
 
-def complexLogic(value:String)(implicit printer:Printer) = {
+def complexLogic(value: String)(implicit printer: Printer) = {
   printer.write(value)
 }
 

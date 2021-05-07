@@ -1,8 +1,8 @@
 package com.yadavan88.scala2
 
-implicit val starShip:String = "USS Enterprise"
+implicit val starShip: String = "USS Enterprise"
 
-def captainsLog(log:String) = {
+def captainsLog(log: String) = {
   val shipName = implicitly[String]
   val msg = s"[$shipName]: $log"
   println(msg)

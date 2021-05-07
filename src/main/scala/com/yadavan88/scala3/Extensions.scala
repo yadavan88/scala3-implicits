@@ -1,18 +1,17 @@
 package com.yadavan88.scala3
 
+extension (
+    str: String
+) def abbreviate = str.split("\\s").map(_.head.toUpper).mkString //doesnt care about exceptions for now
 
-extension (str: String)
-  def abbreviate = str.split("\\s").map(_.head.toUpper).mkString //doesnt care about exceptions for now
+extension [A](list: List[A]) def second: Option[A] = list.tail.headOption
 
-extension[A] (list: List[A])
-  def second: Option[A] = list.tail.headOption
-
-extension[A, B] (tuple: Tuple2[A, B])(using a: Numeric[A], b: Numeric[B])
+extension [A, B](tuple: Tuple2[A, B])(using a: Numeric[A], b: Numeric[B])
   def +(that: Tuple2[A, B]) = {
     (a.plus(tuple._1, that._1), b.plus(tuple._2, that._2))
   }
 
-extension[A: Numeric, B: Numeric] (tuple: Tuple2[A, B])
+extension [A: Numeric, B: Numeric](tuple: Tuple2[A, B])
   def -(that: Tuple2[A, B]) = {
     val a = summon[Numeric[A]]
     val b = summon[Numeric[B]]

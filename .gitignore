@@ -4,3 +4,9 @@
 .bsp/
 .idea/
 target/
+.bloop/
+.metals/
+.vscode/
+!project/build.properties
+!project/plugins.sbt
+project/
